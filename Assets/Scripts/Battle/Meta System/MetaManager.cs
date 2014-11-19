@@ -12,9 +12,9 @@ public class MetaManager
     private Dictionary<int, BuffMeta> buffMetaDic;
     private Dictionary<int, CityBuildingMeta> cityBuildingMetaDic;
     private Dictionary<int, LevelMeta> levelMetaDic;
-    private Dictionary<int, MapElementMeta> mapBuildingMetaDic;
-    private Dictionary<int, MapElementMeta> mapMonsterMetaDic;
-    private Dictionary<int, MapElementMeta> mapTreasureMetaDic;
+//    private Dictionary<int, MapElementMeta> mapBuildingMetaDic;
+//    private Dictionary<int, MapElementMeta> mapMonsterMetaDic;
+//    private Dictionary<int, MapElementMeta> mapTreasureMetaDic;
     private Dictionary<int, long> lordLevelExpDic;
     private static MetaManager instance;
 
@@ -32,10 +32,10 @@ public class MetaManager
             metaManager.buffMetaDic = mockData.buffMetaDic;
             metaManager.cityBuildingMetaDic = mockData.cityBuildingMetaDic;
             metaManager.levelMetaDic = mockData.levelMetaDic;
-            metaManager.mapBuildingMetaDic = mockData.mapBuildingMetaDic;
-            metaManager.mapMonsterMetaDic = mockData.mapMonsterMetaDic;
+//            metaManager.mapBuildingMetaDic = mockData.mapBuildingMetaDic;
+//            metaManager.mapMonsterMetaDic = mockData.mapMonsterMetaDic;
             metaManager.lordLevelExpDic = mockData.lordLevelExpDic;
-            metaManager.mapTreasureMetaDic = mockData.mapTreasureMetaDic;
+//            metaManager.mapTreasureMetaDic = mockData.mapTreasureMetaDic;
 
             instance = metaManager;
         }
@@ -108,22 +108,22 @@ public class MetaManager
         return levelMetaDic[metaID];
     }
 
-    public MapElementMeta GetMapElementMeta(int metaID, MapElementType type)
-    {
-        //TODO: Get the soldier meta directly and load the model by another path property.
-        switch (type)
-        {
-            case MapElementType.Building:
-                return mapBuildingMetaDic[metaID];
-            case MapElementType.Monster:
-                return mapMonsterMetaDic[metaID];
-            case MapElementType.Treasure:
-                return mapTreasureMetaDic[metaID];
-            default:
-                return null;
-        }
-
-    }
+//    public MapElementMeta GetMapElementMeta(int metaID, MapElementType type)
+//    {
+//        //TODO: Get the soldier meta directly and load the model by another path property.
+//        switch (type)
+//        {
+//            case MapElementType.Building:
+//                return mapBuildingMetaDic[metaID];
+//            case MapElementType.Monster:
+//                return mapMonsterMetaDic[metaID];
+//            case MapElementType.Treasure:
+//                return mapTreasureMetaDic[metaID];
+//            default:
+//                return null;
+//        }
+//
+//    }
 
     public long GetLordLevelExp(int level)
     {

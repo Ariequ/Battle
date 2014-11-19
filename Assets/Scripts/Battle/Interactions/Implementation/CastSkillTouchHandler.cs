@@ -27,6 +27,8 @@ public class CastSkillTouchHandler : AbstractTouchHandler
 
 	public override void OnStay()
 	{
+		Debug.Log("on stay");
+
 		skillMarker.SetActive(true);
 
 		Vector3 mousePosition = Input.mousePosition;

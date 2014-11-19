@@ -11,8 +11,6 @@ public class BattleController : MonoBehaviour
 
 	public float resultCheckInterval = 3.0f;
 
-	public BattleUIView battleUIView;
-
 	private GameSceneManager sceneDataManager;
 
 	private Transform battleFieldCenter;
@@ -23,12 +21,6 @@ public class BattleController : MonoBehaviour
 
 		ApplicationFacade.Instance.RegisterValueProxy (Faction.Self);
 		ApplicationFacade.Instance.RegisterValueProxy (Faction.Opponent);
-
-		ApplicationFacade.Instance.RegisterMediator (new BattleClearingMediator ());
-		
-		BattleUIMediator battleUIMediator = new BattleUIMediator();
-		ApplicationFacade.Instance.RegisterMediator(battleUIMediator);
-		sceneDataManager.MessageRoute.RegistryMessageDrivenBehaviour(battleUIMediator);
 	}
 
 	void Start () 
@@ -61,9 +53,6 @@ public class BattleController : MonoBehaviour
 	{
 		ApplicationFacade.Instance.RemoveValueProxy (Faction.Self);
 		ApplicationFacade.Instance.RemoveValueProxy (Faction.Opponent);
-		
-		ApplicationFacade.Instance.RemoveMediator (BattleClearingMediator.NAME);
-		ApplicationFacade.Instance.RemoveMediator(BattleUIMediator.NAME);
 	}
 
 	private IEnumerator StartBattle (BattleProxy battleProxy)
@@ -112,7 +101,7 @@ public class BattleController : MonoBehaviour
 
 		StartCoroutine (StartGameCheckLoop ());
 
-		ApplicationFacade.Instance.SendNotification(NotificationConst.SHOW_BATTLE_UI, this.battleUIView);
+//		ApplicationFacade.Instance.SendNotification(NotificationConst.SHOW_BATTLE_UI, this.battleUIView);
 	}
 
 	private IEnumerator StartGameCheckLoop ()
@@ -128,7 +117,7 @@ public class BattleController : MonoBehaviour
 
         if (battleState == BattleResult.Win)
         {       
-            MockServer.worldVO.defeatedMonsterIDList.Add (MockServer.worldVO.inBattleMonsterID);
+//            MockServer.worldVO.defeatedMonsterIDList.Add (MockServer.worldVO.inBattleMonsterID);
             GameObject fireworksEffect = ResourceFacade.Instance.LoadPrefab(PrefabType.Effect, "Effects/Others/FireworksEffect");
 			fireworksEffect.transform.position = battleFieldCenter.position;
 

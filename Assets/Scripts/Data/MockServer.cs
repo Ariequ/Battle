@@ -8,9 +8,9 @@ public class MockServer
 
     public static bool initialized = false;
 
-    public static LordVO lordVO;
+//    public static LordVO lordVO;
 
-    public static LegendVO worldVO;
+//    public static LegendVO worldVO;
 
 	public static List<HeroVO> heroVOList = new List<HeroVO>();
 	public static List<SoldierVO> soldierVOList = new List<SoldierVO>();
@@ -20,16 +20,16 @@ public class MockServer
 	{
         if (!initialized)
         {
-            lordVO = new LordVO();
-            lordVO.lordName = "Tokugawa";
-            lordVO.energy = 100;
-            lordVO.level = 3;
-            lordVO.exp = 0;
-            lordVO.gem = 999;
-            lordVO.gold = 40000;
-            lordVO.wood = 5000;
-            lordVO.ore = 5000;
-            lordVO.vipLevel = 3;
+//            lordVO = new LordVO();
+//            lordVO.lordName = "Tokugawa";
+//            lordVO.energy = 100;
+//            lordVO.level = 3;
+//            lordVO.exp = 0;
+//            lordVO.gem = 999;
+//            lordVO.gold = 40000;
+//            lordVO.wood = 5000;
+//            lordVO.ore = 5000;
+//            lordVO.vipLevel = 3;
 
     		for (int i = 1; i <= 8; i++)
     		{
@@ -52,12 +52,12 @@ public class MockServer
     			levelVOList.Add(levelVO);
     		}
 
-            worldVO = new LegendVO();
-			worldVO.id = 3;
-            worldVO.lordPosition = new Vector3();
-            worldVO.inBattleMonsterID = -1;
-            worldVO.defeatedMonsterIDList = new List<int>();
-            worldVO.defeatedTreasureIDList = new List<int>();
+//            worldVO = new LegendVO();
+//			worldVO.id = 3;
+//            worldVO.lordPosition = new Vector3();
+//            worldVO.inBattleMonsterID = -1;
+//            worldVO.defeatedMonsterIDList = new List<int>();
+//            worldVO.defeatedTreasureIDList = new List<int>();
 
             initialized = true;
         }
@@ -73,17 +73,17 @@ public class MockServer
         return 400;
     }
 
-	public static void RecordLordTransform (Transform lordTransform)
-	{
-		worldVO.lordPosition = lordTransform.position;
-		worldVO.lordRotation = lordTransform.rotation;
-	}
-
-	public static void LoadLordTransform (Transform lordTransform, Vector3 defaultPosition, Quaternion defaultRotation)
-	{
-		lordTransform.position = Vector3.zero != worldVO.lordPosition ? worldVO.lordPosition : defaultPosition;
-		lordTransform.rotation = Quaternion.identity != worldVO.lordRotation ? worldVO.lordRotation : defaultRotation;
-	}
+//	public static void RecordLordTransform (Transform lordTransform)
+//	{
+//		worldVO.lordPosition = lordTransform.position;
+//		worldVO.lordRotation = lordTransform.rotation;
+//	}
+//
+//	public static void LoadLordTransform (Transform lordTransform, Vector3 defaultPosition, Quaternion defaultRotation)
+//	{
+//		lordTransform.position = Vector3.zero != worldVO.lordPosition ? worldVO.lordPosition : defaultPosition;
+//		lordTransform.rotation = Quaternion.identity != worldVO.lordRotation ? worldVO.lordRotation : defaultRotation;
+//	}
 
     public static Dictionary<string, object> GetBuildingUpgradeData(int buildingMetaID)
     {

@@ -7,10 +7,10 @@ public class QueuedInitializer : MonoBehaviour
 	{
 		ApplicationFacade facade = ApplicationFacade.Instance;
 
-		facade.RegisterMediator(new SmithyMediator());
-		facade.RegisterMediator(new GoldMineSystemMediator());
-		facade.RegisterMediator(new MainCityDefenseMediator());
-		facade.RegisterMediator(new ParliamentMediator());
+//		facade.RegisterMediator(new SmithyMediator());
+//		facade.RegisterMediator(new GoldMineSystemMediator());
+//		facade.RegisterMediator(new MainCityDefenseMediator());
+//		facade.RegisterMediator(new ParliamentMediator());
 
 //		Debug.Log(3 & PanelMode.SHOW);
 	}

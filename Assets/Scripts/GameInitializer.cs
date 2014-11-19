@@ -13,9 +13,4 @@ public class GameInitializer : MonoBehaviour
 
 //		StaticConfigManager.Instance.LoadConfig ();
 	}
-
-	void OnDestroy()
-	{
-		PopupManager.Instance.Clear();
-	}
 }

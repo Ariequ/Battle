@@ -22,10 +22,10 @@ public class MockData
     //关卡Meta
 	public Dictionary<int, LevelMeta> levelMetaDic = new Dictionary<int, LevelMeta> ();
     //探索地图建筑Meta
-    public Dictionary<int, MapElementMeta> mapBuildingMetaDic = new Dictionary<int, MapElementMeta>();
+//    public Dictionary<int, MapElementMeta> mapBuildingMetaDic = new Dictionary<int, MapElementMeta>();
     //探索地图建筑Meta
-    public Dictionary<int, MapElementMeta> mapMonsterMetaDic = new Dictionary<int, MapElementMeta>();
-    public Dictionary<int, MapElementMeta> mapTreasureMetaDic = new Dictionary<int, MapElementMeta>();
+//    public Dictionary<int, MapElementMeta> mapMonsterMetaDic = new Dictionary<int, MapElementMeta>();
+//    public Dictionary<int, MapElementMeta> mapTreasureMetaDic = new Dictionary<int, MapElementMeta>();
 
     //领主经验配置
     public Dictionary<int, long> lordLevelExpDic = new Dictionary<int, long>();
@@ -40,7 +40,7 @@ public class MockData
 		SkillLinkMeta skillLinkMeta;
 		CityBuildingMeta cityBuildingMeta;
 		LevelMeta levelMeta;
-        MapElementMeta mapElementMeta;
+//        MapElementMeta mapElementMeta;
 
 		#region Skill
 
@@ -816,75 +816,75 @@ public class MockData
 
 		#endregion
 
-        #region MapElement
+//        #region MapElement
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 1;
+//        mapElementMeta.prefabPath = "Buildings/Building_1";
+//        mapElementMeta.type = MapElementType.Building;
+//        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 2;
+//        mapElementMeta.prefabPath = "Buildings/Building_2";
+//        mapElementMeta.type = MapElementType.Building;
+//        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 3;
+//        mapElementMeta.prefabPath = "Buildings/Building_3";
+//        mapElementMeta.type = MapElementType.Building;
+//        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 4;
+//        mapElementMeta.prefabPath = "Buildings/Building_4";
+//        mapElementMeta.type = MapElementType.Building;
+//        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 5;
+//        mapElementMeta.prefabPath = "Buildings/Building_5";
+//        mapElementMeta.type = MapElementType.Building;
+//        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//		mapElementMeta = new MapElementMeta();
+//		mapElementMeta.id = 6;
+//		mapElementMeta.prefabPath = "Buildings/Building_6";
+//		mapElementMeta.type = MapElementType.Building;
+//		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//		mapElementMeta = new MapElementMeta();
+//		mapElementMeta.id = 7;
+//		mapElementMeta.prefabPath = "Buildings/Building_7";
+//		mapElementMeta.type = MapElementType.Building;
+//		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//		mapElementMeta = new MapElementMeta();
+//		mapElementMeta.id = 8;
+//		mapElementMeta.prefabPath = "Buildings/Building_8";
+//		mapElementMeta.type = MapElementType.Building;
+//		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 1;
+//        mapElementMeta.prefabPath = "Monsters/Monster_1";
+//        mapElementMeta.type = MapElementType.Monster;
+//        mapMonsterMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 2;
+//        mapElementMeta.prefabPath = "Monsters/Monster_2";
+//        mapElementMeta.type = MapElementType.Monster;
+//        mapMonsterMetaDic[mapElementMeta.id] = mapElementMeta;
+//
+//        mapElementMeta = new MapElementMeta();
+//        mapElementMeta.id = 1;
+//        mapElementMeta.prefabPath = "Treasures/Chest_1";
+//        mapElementMeta.type = MapElementType.Treasure;
+//        mapTreasureMetaDic[mapElementMeta.id] = mapElementMeta;
 
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 1;
-        mapElementMeta.prefabPath = "Buildings/Building_1";
-        mapElementMeta.type = MapElementType.Building;
-        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 2;
-        mapElementMeta.prefabPath = "Buildings/Building_2";
-        mapElementMeta.type = MapElementType.Building;
-        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 3;
-        mapElementMeta.prefabPath = "Buildings/Building_3";
-        mapElementMeta.type = MapElementType.Building;
-        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 4;
-        mapElementMeta.prefabPath = "Buildings/Building_4";
-        mapElementMeta.type = MapElementType.Building;
-        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 5;
-        mapElementMeta.prefabPath = "Buildings/Building_5";
-        mapElementMeta.type = MapElementType.Building;
-        mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-		mapElementMeta = new MapElementMeta();
-		mapElementMeta.id = 6;
-		mapElementMeta.prefabPath = "Buildings/Building_6";
-		mapElementMeta.type = MapElementType.Building;
-		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-		mapElementMeta = new MapElementMeta();
-		mapElementMeta.id = 7;
-		mapElementMeta.prefabPath = "Buildings/Building_7";
-		mapElementMeta.type = MapElementType.Building;
-		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-		mapElementMeta = new MapElementMeta();
-		mapElementMeta.id = 8;
-		mapElementMeta.prefabPath = "Buildings/Building_8";
-		mapElementMeta.type = MapElementType.Building;
-		mapBuildingMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 1;
-        mapElementMeta.prefabPath = "Monsters/Monster_1";
-        mapElementMeta.type = MapElementType.Monster;
-        mapMonsterMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 2;
-        mapElementMeta.prefabPath = "Monsters/Monster_2";
-        mapElementMeta.type = MapElementType.Monster;
-        mapMonsterMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        mapElementMeta = new MapElementMeta();
-        mapElementMeta.id = 1;
-        mapElementMeta.prefabPath = "Treasures/Chest_1";
-        mapElementMeta.type = MapElementType.Treasure;
-        mapTreasureMetaDic[mapElementMeta.id] = mapElementMeta;
-
-        #endregion
+//        #endregion
 
         #region LordLevelExp
 
