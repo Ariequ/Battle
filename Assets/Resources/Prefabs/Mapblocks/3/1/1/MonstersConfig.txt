@@ -1,1 +1,0 @@
-[{"id":"1","type":"Monster","metaID":"1","localX":"36.49532","localY":"17.38683","localZ":"28.43069","lightmappingIndex":"-1","lightX":"1","lightY":"1","lightZ":"0","lightW":"0"},{"id":"2","type":"Monster","metaID":"2","localX":"83.37715","localY":"17.38683","localZ":"50.522","lightmappingIndex":"-1","lightX":"1","lightY":"1","lightZ":"0","lightW":"0"}]
