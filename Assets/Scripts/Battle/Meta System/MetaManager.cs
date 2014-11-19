@@ -10,7 +10,7 @@ public class MetaManager
     private Dictionary<int, HeroMeta> heroMetaDic;
     private Dictionary<int, SkillMeta> skillMetaDic;
     private Dictionary<int, BuffMeta> buffMetaDic;
-    private Dictionary<int, CityBuildingMeta> cityBuildingMetaDic;
+//    private Dictionary<int, CityBuildingMeta> cityBuildingMetaDic;
     private Dictionary<int, LevelMeta> levelMetaDic;
 //    private Dictionary<int, MapElementMeta> mapBuildingMetaDic;
 //    private Dictionary<int, MapElementMeta> mapMonsterMetaDic;
@@ -30,7 +30,7 @@ public class MetaManager
             metaManager.heroMetaDic = mockData.heroMetaDic;
             metaManager.skillMetaDic = mockData.skillMetaDic;
             metaManager.buffMetaDic = mockData.buffMetaDic;
-            metaManager.cityBuildingMetaDic = mockData.cityBuildingMetaDic;
+//            metaManager.cityBuildingMetaDic = mockData.cityBuildingMetaDic;
             metaManager.levelMetaDic = mockData.levelMetaDic;
 //            metaManager.mapBuildingMetaDic = mockData.mapBuildingMetaDic;
 //            metaManager.mapMonsterMetaDic = mockData.mapMonsterMetaDic;
@@ -89,19 +89,19 @@ public class MetaManager
         return buffMetaDic[metaID];
     }
 
-    public CityBuildingMeta GetCityBuildingMeta(int metaID)
-    {
-        if (cityBuildingMetaDic.ContainsKey(metaID))
-        {
-            return cityBuildingMetaDic[metaID];
-        }
-        else
-        {
-            Debug.Log("No Building Meta of ID " + metaID);
-           
-            return null;
-        }
-    }
+//    public CityBuildingMeta GetCityBuildingMeta(int metaID)
+//    {
+//        if (cityBuildingMetaDic.ContainsKey(metaID))
+//        {
+//            return cityBuildingMetaDic[metaID];
+//        }
+//        else
+//        {
+//            Debug.Log("No Building Meta of ID " + metaID);
+//           
+//            return null;
+//        }
+//    }
 
     public LevelMeta GetLevelMeta(int metaID)
     {

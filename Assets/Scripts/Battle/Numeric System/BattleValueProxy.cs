@@ -17,7 +17,7 @@ public class BattleValueProxy : Proxy
 
     private Dictionary<int, HeroVO> heroVODic;
     private Dictionary<int, SkillMeta> skillDic;
-    private Dictionary<int, EquipmentVO> equipmentDic;
+//    private Dictionary<int, EquipmentVO> equipmentDic;
 
     private bool isCacheDirty;
 
@@ -29,7 +29,7 @@ public class BattleValueProxy : Proxy
     {
 		heroVODic = new Dictionary<int, HeroVO>();
         skillDic = new Dictionary<int, SkillMeta>();
-		equipmentDic = new Dictionary<int, EquipmentVO>();
+//		equipmentDic = new Dictionary<int, EquipmentVO>();
 		
 		isCacheDirty = true;
     }
@@ -38,7 +38,7 @@ public class BattleValueProxy : Proxy
 	{
 		heroVODic.Clear();
 		skillDic.Clear ();
-		equipmentDic.Clear ();
+//		equipmentDic.Clear ();
 
 		__heroVOList = null;
 		__skillVOList = null;
@@ -132,13 +132,13 @@ public class BattleValueProxy : Proxy
             heroDefenseCache += heroVO.Defense;
             heroHPCache += heroVO.HP;
 
-            EquipmentVO[] equipmentVOArray = heroVO.GetEquipmentArray();
-            foreach(EquipmentVO equipmentVO in equipmentVOArray)
-            {
-                heroAttackCache += equipmentVO.Attack;
-                heroDefenseCache += equipmentVO.Defense;
-                heroHPCache += equipmentVO.HP;
-            }
+//            EquipmentVO[] equipmentVOArray = heroVO.GetEquipmentArray();
+//            foreach(EquipmentVO equipmentVO in equipmentVOArray)
+//            {
+//                heroAttackCache += equipmentVO.Attack;
+//                heroDefenseCache += equipmentVO.Defense;
+//                heroHPCache += equipmentVO.HP;
+//            }
         }
 
         isCacheDirty = false;

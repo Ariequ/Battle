@@ -18,7 +18,7 @@ public class MockData
     //Buff Meta
     public Dictionary<int, BuffMeta> buffMetaDic = new Dictionary<int, BuffMeta>();
     //主城建筑Meta
-    public Dictionary<int, CityBuildingMeta> cityBuildingMetaDic = new Dictionary<int, CityBuildingMeta>();
+//    public Dictionary<int, CityBuildingMeta> cityBuildingMetaDic = new Dictionary<int, CityBuildingMeta>();
     //关卡Meta
 	public Dictionary<int, LevelMeta> levelMetaDic = new Dictionary<int, LevelMeta> ();
     //探索地图建筑Meta
@@ -38,7 +38,7 @@ public class MockData
 		SoldierMeta soldierMeta;
 		SkillMeta skillMeta;
 		SkillLinkMeta skillLinkMeta;
-		CityBuildingMeta cityBuildingMeta;
+//		CityBuildingMeta cityBuildingMeta;
 		LevelMeta levelMeta;
 //        MapElementMeta mapElementMeta;
 
@@ -674,66 +674,66 @@ public class MockData
         
         #endregion  
 
-        #region Building
-
-        cityBuildingMeta = new CityBuildingMeta();
-        cityBuildingMeta.id = 1;
-        cityBuildingMeta.metaName = "Parliament_0";
-        cityBuildingMeta.type = CityBuildingType.Parliament;
-        cityBuildingMeta.productType = CurrencyType.Gold;
-        cityBuildingMeta.productAmount = 100;
-        cityBuildingMeta.upgradePrice = new Price(1000, 10, 10);
-        cityBuildingMeta.upgradeDuration = 23453;
-        cityBuildingMeta.upgradeBuildingID = 2;
-        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/Parliament";
-        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
-
-        cityBuildingMeta = new CityBuildingMeta();
-        cityBuildingMeta.id = 2;
-        cityBuildingMeta.metaName = "Parliament_1";
-        cityBuildingMeta.type = CityBuildingType.Parliament;
-        cityBuildingMeta.productType = CurrencyType.Gold;
-        cityBuildingMeta.productAmount = 200;
-        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
-        cityBuildingMeta.upgradeDuration = 546747;
-        cityBuildingMeta.upgradeBuildingID = 3;
-        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/Parliament";
-        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
-
-        cityBuildingMeta = new CityBuildingMeta();
-        cityBuildingMeta.id = 10;
-        cityBuildingMeta.metaName = "Defense";
-        cityBuildingMeta.type = CityBuildingType.Defense;
-        cityBuildingMeta.productType = CurrencyType.Gold;
-        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
-        cityBuildingMeta.upgradeDuration = 546747;
-        cityBuildingMeta.upgradeBuildingID = 11;
-        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/castle";
-        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
-
-        cityBuildingMeta = new CityBuildingMeta();
-        cityBuildingMeta.id = 20;
-        cityBuildingMeta.metaName = "Goldmine";
-        cityBuildingMeta.type = CityBuildingType.Goldmine;
-        cityBuildingMeta.productType = CurrencyType.Gold;
-        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
-        cityBuildingMeta.upgradeDuration = 546747;
-        cityBuildingMeta.upgradeBuildingID = 21;
-        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/goldmine";
-        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
-
-        cityBuildingMeta = new CityBuildingMeta();
-        cityBuildingMeta.id = 30;
-        cityBuildingMeta.metaName = "Smithy";
-        cityBuildingMeta.type = CityBuildingType.Smithy;
-        cityBuildingMeta.productType = CurrencyType.Gold;
-        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
-        cityBuildingMeta.upgradeDuration = 546747;
-        cityBuildingMeta.upgradeBuildingID = 31;
-        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/smithy";
-        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
-
-        #endregion
+//        #region Building
+//
+//        cityBuildingMeta = new CityBuildingMeta();
+//        cityBuildingMeta.id = 1;
+//        cityBuildingMeta.metaName = "Parliament_0";
+//        cityBuildingMeta.type = CityBuildingType.Parliament;
+//        cityBuildingMeta.productType = CurrencyType.Gold;
+//        cityBuildingMeta.productAmount = 100;
+//        cityBuildingMeta.upgradePrice = new Price(1000, 10, 10);
+//        cityBuildingMeta.upgradeDuration = 23453;
+//        cityBuildingMeta.upgradeBuildingID = 2;
+//        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/Parliament";
+//        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
+//
+//        cityBuildingMeta = new CityBuildingMeta();
+//        cityBuildingMeta.id = 2;
+//        cityBuildingMeta.metaName = "Parliament_1";
+//        cityBuildingMeta.type = CityBuildingType.Parliament;
+//        cityBuildingMeta.productType = CurrencyType.Gold;
+//        cityBuildingMeta.productAmount = 200;
+//        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
+//        cityBuildingMeta.upgradeDuration = 546747;
+//        cityBuildingMeta.upgradeBuildingID = 3;
+//        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/Parliament";
+//        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
+//
+//        cityBuildingMeta = new CityBuildingMeta();
+//        cityBuildingMeta.id = 10;
+//        cityBuildingMeta.metaName = "Defense";
+//        cityBuildingMeta.type = CityBuildingType.Defense;
+//        cityBuildingMeta.productType = CurrencyType.Gold;
+//        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
+//        cityBuildingMeta.upgradeDuration = 546747;
+//        cityBuildingMeta.upgradeBuildingID = 11;
+//        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/castle";
+//        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
+//
+//        cityBuildingMeta = new CityBuildingMeta();
+//        cityBuildingMeta.id = 20;
+//        cityBuildingMeta.metaName = "Goldmine";
+//        cityBuildingMeta.type = CityBuildingType.Goldmine;
+//        cityBuildingMeta.productType = CurrencyType.Gold;
+//        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
+//        cityBuildingMeta.upgradeDuration = 546747;
+//        cityBuildingMeta.upgradeBuildingID = 21;
+//        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/goldmine";
+//        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
+//
+//        cityBuildingMeta = new CityBuildingMeta();
+//        cityBuildingMeta.id = 30;
+//        cityBuildingMeta.metaName = "Smithy";
+//        cityBuildingMeta.type = CityBuildingType.Smithy;
+//        cityBuildingMeta.productType = CurrencyType.Gold;
+//        cityBuildingMeta.upgradePrice = new Price(2000, 15, 15);
+//        cityBuildingMeta.upgradeDuration = 546747;
+//        cityBuildingMeta.upgradeBuildingID = 31;
+//        cityBuildingMeta.iconPath = "UITextures/BuildingIcon/smithy";
+//        cityBuildingMetaDic[cityBuildingMeta.id] = cityBuildingMeta;
+//
+//        #endregion
 
 		#region Level
 

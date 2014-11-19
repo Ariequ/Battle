@@ -15,14 +15,14 @@ public class QueuedInitializer : MonoBehaviour
 //		Debug.Log(3 & PanelMode.SHOW);
 	}
 
-	void Start ()
-	{
-		ApplicationFacade facade = ApplicationFacade.Instance;
-
-		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Smithy);
-		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Goldmine);
-		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Defense);
-		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Parliament);
-	}
+//	void Start ()
+//	{
+//		ApplicationFacade facade = ApplicationFacade.Instance;
+//
+//		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Smithy);
+//		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Goldmine);
+//		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Defense);
+//		facade.SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, CityBuildingType.Parliament);
+//	}
 }
 

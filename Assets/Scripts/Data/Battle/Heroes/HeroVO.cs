@@ -114,20 +114,20 @@ public class HeroVO
         }
     }
 
-    private List<EquipmentVO> equipmentList = new List<EquipmentVO>();
-    
-    public void AddEquipment(EquipmentVO equipmentVO)
-    {
-        if (equipmentList.Count < BattleValueConst.MAX_EQUIPMENT_COUNT)
-        {
-            equipmentList.Add(equipmentVO);
-        }
-    }
+//    private List<EquipmentVO> equipmentList = new List<EquipmentVO>();
+//    
+//    public void AddEquipment(EquipmentVO equipmentVO)
+//    {
+//        if (equipmentList.Count < BattleValueConst.MAX_EQUIPMENT_COUNT)
+//        {
+//            equipmentList.Add(equipmentVO);
+//        }
+//    }
 
-    public EquipmentVO[] GetEquipmentArray()
-    {
-        return equipmentList.ToArray();
-    }
+//    public EquipmentVO[] GetEquipmentArray()
+//    {
+//        return equipmentList.ToArray();
+//    }
 
 	public int Fighting
 	{

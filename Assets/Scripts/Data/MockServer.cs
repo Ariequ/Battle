@@ -85,27 +85,27 @@ public class MockServer
 //		lordTransform.rotation = Quaternion.identity != worldVO.lordRotation ? worldVO.lordRotation : defaultRotation;
 //	}
 
-    public static Dictionary<string, object> GetBuildingUpgradeData(int buildingMetaID)
-    {
-        CityBuildingMeta buildingMeta = MetaManager.Instance.GetCityBuildingMeta(buildingMetaID);
-
-        Dictionary<string, object> data = new Dictionary<string, object>();
-        data[UpgradeProxy.IS_UPGRADING] = false;
-        data[UpgradeProxy.REMAIN_TIME] = buildingMeta.upgradeDuration;
-        return data;
-    }
-
-    public static Dictionary<string, object> UpgradeBuilding(int buildingMetaID)
-    {
-        CityBuildingMeta buildingMeta = MetaManager.Instance.GetCityBuildingMeta(buildingMetaID);
-        int nextMetaID = buildingMeta.upgradeBuildingID;
-        long duration = buildingMeta.upgradeDuration;
-
-        Dictionary<string, object> data = new Dictionary<string, object>();
-        data[UpgradeProxy.META_ID] = nextMetaID;
-        data[UpgradeProxy.IS_UPGRADING] = true;
-        data[UpgradeProxy.REMAIN_TIME] = duration;
-        return data;
-    }
+//    public static Dictionary<string, object> GetBuildingUpgradeData(int buildingMetaID)
+//    {
+//        CityBuildingMeta buildingMeta = MetaManager.Instance.GetCityBuildingMeta(buildingMetaID);
+//
+//        Dictionary<string, object> data = new Dictionary<string, object>();
+//        data[UpgradeProxy.IS_UPGRADING] = false;
+//        data[UpgradeProxy.REMAIN_TIME] = buildingMeta.upgradeDuration;
+//        return data;
+//    }
+//
+//    public static Dictionary<string, object> UpgradeBuilding(int buildingMetaID)
+//    {
+//        CityBuildingMeta buildingMeta = MetaManager.Instance.GetCityBuildingMeta(buildingMetaID);
+//        int nextMetaID = buildingMeta.upgradeBuildingID;
+//        long duration = buildingMeta.upgradeDuration;
+//
+//        Dictionary<string, object> data = new Dictionary<string, object>();
+//        data[UpgradeProxy.META_ID] = nextMetaID;
+//        data[UpgradeProxy.IS_UPGRADING] = true;
+//        data[UpgradeProxy.REMAIN_TIME] = duration;
+//        return data;
+//    }
 }
 

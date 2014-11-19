@@ -24,12 +24,6 @@ public class MessageRouteMediator : Mediator
             {
                 break;
             }
-            case MessageType.SHOW_BUILDING_PANEL:
-            {
-                MainCityBuildingVO buildingVO = notification.Body as MainCityBuildingVO;
-                SendNotification(NotificationConst.MAIN_CITY_INIT_PANEL, buildingVO.meta.metaName);
-                break;
-            }
             default:
                 break;
         }
