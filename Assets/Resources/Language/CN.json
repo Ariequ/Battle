@@ -1,0 +1,55 @@
+{
+	"upgrade_title_1":"议政厅（9级）",
+	"upgrade_title_2":"兵营",
+	"upgrade_title_3":"兵营",
+	"upgrade_title_4":"兵营",
+	"upgrade_title_5":"兵营",
+	"upgrade_title_6":"兵营",
+	"upgrade_title_7":"兵营",
+	"upgrade_title_8":"兵营",
+	"upgrade_title_9":"兵营",
+	"upgrade_title_10":"城防（9级）",
+	"upgrade_title_11":"兵营",
+	"upgrade_title_12":"兵营",
+	"upgrade_title_13":"兵营",
+	"upgrade_title_14":"兵营",
+	"upgrade_title_15":"兵营",
+	"upgrade_title_16":"兵营",
+	"upgrade_title_17":"兵营",
+	"upgrade_title_18":"兵营",
+	"upgrade_title_19":"兵营",
+	"upgrade_title_20":"金矿（9级）",
+	"upgrade_title_21":"兵营",
+	"upgrade_title_30":"铁匠铺（9级）",
+
+
+	"upgrade_desc_1":"议政厅作为城市管理的核心建筑，其等级决定了其他建筑的等级上限，同时也是领主征收赋税的执行场所。\n\n当前等级：9级 \n增加90%的基础税收，实际收入88888",
+	"upgrade_desc_2":"增加100%的基础税收，实际收入99999 \n开放其他建筑的等级上限：10级",
+
+	"upgrade_desc_3":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_4":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_5":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_6":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_7":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_8":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_9":"兵营升级可以招募更多的兵种",
+
+	"upgrade_desc_10":"为领主的城市提供坚固的城墙与魔法塔，以防止城市遭到敌人的攻击。同时提供攻城车帮助领主扩张领土，成就霸业。\n\n当前等级：9级 \n等级属性加成：+5%",
+	"upgrade_desc_11":"等级属性加成：+6%",
+
+	"upgrade_desc_12":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_13":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_14":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_15":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_16":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_17":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_18":"兵营升级可以招募更多的兵种",
+	"upgrade_desc_19":"兵营升级可以招募更多的兵种",
+
+
+	"upgrade_desc_20":"领主城市内原有的近况，开采量远大于野外金矿，同时也是熔炼野外金矿获得金币的管理工具。 \n\n当前等级：9级\n建筑等级加成：所有金矿获得+5%",
+	"upgrade_desc_21":"建筑等级加成：所有金矿获得+6%",
+
+	"upgrade_desc_30":"铁匠铺能够为玩家提供战争机器，辅助战斗。建筑等级越高，解锁的战争机器的种类越多。每次战斗只能携带一个战争机器。 \n\n当前等级：9级 \n当前解锁战争机器数量：9",
+	"upgrade_desc_31":"解锁战争机器数量：10 \n解锁新的战争机器：魔盒"
+}

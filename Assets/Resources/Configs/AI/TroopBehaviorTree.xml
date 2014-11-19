@@ -1,0 +1,12 @@
+<Selector name="Troop">
+	<Action name="Battle.TroopDieAction">
+		<Condition name="Battle.NoneSoldierCondition" />
+	</Action>
+	<Sequence name="Move">
+		<Selector name="TroopChooseMoveTarget">
+			<Action name="Battle.TroopChooseChosenMeTargetAction" out="troopMoveTarget" />
+			<Action name="Battle.TroopChooseNewMoveTargetAction" out="troopMoveTarget" />
+		</Selector>
+		<Action name="Battle.TroopMoveAction" in="troopMoveTarget" />
+	</Sequence>
+</Selector>

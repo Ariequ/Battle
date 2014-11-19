@@ -1,0 +1,35 @@
+<Selector name="Solider">
+	<Action name="Die">
+		<Condition name="Battle.DieAction" />
+	</Action>
+	<Action name="Battle.IdelAction">
+		<Condition name="Battle.NoEnemyCondition" />
+	</Action>
+	<Decorator name="RepeatDecorator" repeatCount="5">
+		<Sequence name="Attack_A">
+			<Action name="ChooseNewAttackTarget" in="targetTroopName" out="attackTarget" />
+			<Action name="Battle.AttackAAction" in="attackTarget" />
+			<Action name="Rest" />
+		</Sequence>
+	</Decorator>
+	<Decorator name="RepeatToSuccessDecorator" repeatCount="1">
+		<Sequence name="Move">
+			<Condition name="NOTCondition">
+				<Condition name="OR">
+					<Condition name="NoEnemy" />
+					<Condition name="DieCondition" />
+				</Condition>
+			</Condition>
+			<Action name="Battle.ChooseNewMoveTarget" out="moveTowoardTarget" />
+			<Action name="Battle.MoveToTowoardTargetAttackingPlaceAction" in="moveTowoardTarget" out="attackTarget" />
+		</Sequence>
+	</Decorator>
+	<Selector name="Solider_Attacked">
+		<Condition name="NOTCondition">
+			<Condition name="EqualCondition" property="attackStatus" value="0" />
+		</Condition>
+		<Action name="Battle.BackAction">
+			<Condition name="EqualCondition" property="attackStatus" value="2" />
+		</Action>
+	</Selector>
+</Selector>

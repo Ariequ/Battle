@@ -1,0 +1,7 @@
+<Selector name="Magic">
+	<Sequence name="AutoMagic">
+		<Condition name="HasTroopConditon"/>
+		<Action name="ChooseMagicAction" out="MagicType" />
+		<Action name="ExecuteMagicAction" in="MagicType" />
+	</Sequence>
+</Selector>

@@ -1,0 +1,1 @@
+{"fog_StartDistance":"200","fog_GlobalDensity":"0","fog_HeightScale":"16","fog_Height":"-30","fog_GlobalFogColor":"RGBA(0.582, 0.716, 0.978, 1.000)","fog_FogShader":"Hidden/GlobalFog ","follow_Distance":"12","follow_Height":"25","follow_HeightDamping":"1","follow_RotationDamping":"0"}

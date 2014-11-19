@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 11658937e44a44491baf3d27c87b8876
+labels:
+- Shadow
+- Fast
+- Drawcall
+- Mobile
+- Light
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
