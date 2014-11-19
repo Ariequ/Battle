@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ResourceManager
 {
-	private AssetBundleManager assetBundleManager;
+//	private AssetBundleManager assetBundleManager;
 
 	private AssetManager assetManager;
 
@@ -17,14 +17,14 @@ public class ResourceManager
 	{
 		this.facade = facade;
 
-		assetBundleManager = new AssetBundleManager(facade);
+//		assetBundleManager = new AssetBundleManager(facade);
 		assetManager = new AssetManager();
 		cacheManager = new CacheManager();
 	}
 
 	public void Dispose ()
 	{
-		assetBundleManager.Dispose();
+//		assetBundleManager.Dispose();
 		assetManager.Dispose();
 		cacheManager.Dispose();
 
@@ -42,10 +42,10 @@ public class ResourceManager
 	/// </summary>
 	/// <param name="path">路径</param>
 	/// <param name="objectCallback">对获得的Asset的回调</param>
-	public void LoadAssetBundle(string path, AssetBundleManager.AssetBundleCompleteCallback callback, bool autoDestroy = true)
-	{
-		assetBundleManager.Load(path, callback, autoDestroy);
-	}
+//	public void LoadAssetBundle(string path, AssetBundleManager.AssetBundleCompleteCallback callback, bool autoDestroy = true)
+//	{
+//		assetBundleManager.Load(path, callback, autoDestroy);
+//	}
 
 	/// <summary>
 	/// 对指定游戏对象进行预加载
