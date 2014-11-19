@@ -125,7 +125,7 @@ public class CharacterAnimationController : IAnimationController {
 //			GetComponent<SoldierAIAgent>().enabled = false;
 //			GetComponent<GameSensor>().enabled = false;
 //			GetComponent<UnitInfo>().enabled = false;
-			GetComponent<CharacterMoveController>().enabled = false;
+//			GetComponent<CharacterMoveController>().enabled = false;
 			collider.isTrigger = true;
 		}
 
