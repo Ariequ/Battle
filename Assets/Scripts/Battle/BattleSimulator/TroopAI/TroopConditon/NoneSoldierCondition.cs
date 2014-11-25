@@ -6,7 +6,7 @@
         {
             TroopAgent agent = context.Agent as TroopAgent;
 
-            return agent.soldiers.Count < 1;
+            return agent.Soldiers.Count < 1;
         }
     }
 }

@@ -102,6 +102,7 @@ namespace Battle
     public class BattleAgentManager
     {
 		public const string SoldierBehaviorTreeName = "SoliderBehaviorTree";
+        public const string ControllableSoldierBehaviorTreeName = "ControllableSoldierBehaviorTree";
 		public const string TroopBehaviorTreeName = "TroopBehaviorTree";
 
         private static Type[] analyzerDefinitions = new Type[] {
@@ -725,7 +726,7 @@ namespace Battle
 
             troopAgent.InitFlock();
 
-			behaviorTree = GetBehaviorTree(SoldierBehaviorTreeName);
+            behaviorTree = troopDefinition.faction == Faction.Self ?  GetBehaviorTree(ControllableSoldierBehaviorTreeName) : GetBehaviorTree(SoldierBehaviorTreeName);
 
             for (int i = 0; i < troopDefinition.soliderAnchors.Length; i++)
             {

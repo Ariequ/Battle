@@ -220,6 +220,14 @@ namespace Battle
 			battleSimulator.Start ();
 		}
 
+		public BattleAgentManager BattleAgentManager
+		{
+			get
+			{
+				return this.battleSimulator.BattleAgentManager;
+			}
+		}
+
         public GameMessageRoute MessageRoute
         {
             get

@@ -67,7 +67,7 @@ public class ExecuteMagicAction : BTAction
 
         foreach (TroopAgent troop in troops) 
 		{
-			if (mostSoldierTroop == null || troop.soldiers.Count > mostSoldierTroop.soldiers.Count)
+            if (mostSoldierTroop == null || troop.Soldiers.Count > mostSoldierTroop.Soldiers.Count)
 			{
 				mostSoldierTroop = troop;
 			}
@@ -77,7 +77,7 @@ public class ExecuteMagicAction : BTAction
         {
             List<BattleAgent> list = new List<BattleAgent>();
             
-            foreach( BattleAgent agent in mostSoldierTroop.soldiers.Values)
+            foreach( BattleAgent agent in mostSoldierTroop.Soldiers.Values)
             {
                 list.Add(agent);        
             }

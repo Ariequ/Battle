@@ -4,13 +4,14 @@ using FameCore.Util;
 using UnityEngine;
 using System.Xml;
 using System;
+using System.Linq;
 
 namespace Battle
 {
     public class TroopAgent : IAIAgent,IAIContext,CtrlPointInterface
     {
 //        internal IList<BattleAgent> soldiers = new List<BattleAgent>();
-        public Dictionary<string, BattleAgent> soldiers = new Dictionary<string, BattleAgent>();
+        private Dictionary<string, BattleAgent> soldiers = new Dictionary<string, BattleAgent>();
         internal Vector2 troopMoveTarget;
         internal TroopAgent troopChosenMeTarget;
         private BattleAgentManager battleAgentManager;
@@ -21,6 +22,7 @@ namespace Battle
         private BattleAgentStatus m_Status = BattleAgentStatus.MOVE;
         public string SideName;
         private TroopDefinition originalTroopDefinition;
+        private TroopAgent attackTroop;
 
 		public TroopAgent(TroopDefinition troopDefinition, BattleAgentManager battleAgentManager, XmlDocument behaviorTree)
         {
@@ -121,6 +123,16 @@ namespace Battle
         internal void RemoveSoldier(string name)
         {
             soldiers.Remove(name);
+        }
+
+        public void setAttackTroop(TroopAgent troop)
+        {
+            attackTroop = troop;
+
+            foreach(BattleAgent soldier in soldiers.Values)
+            {
+                soldier.TracingTarget = troop.soldiers.Values.ToArray()[0];
+            }
         }
 
         #region IAIAgent

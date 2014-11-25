@@ -15,6 +15,8 @@ namespace Battle
 		string AttackTarget { get; }
 
 		int AttackMode { get; }
+
+		BattleAgent TracingTarget { set; get;}
     }
 }
 
