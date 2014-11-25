@@ -230,13 +230,13 @@ namespace Battle
         public static float Default_mMaxForce = 200;
         public static float Default_mTurnSpeed = 500;
         public static float Default_CohRad = 1;
-        public static float Default_CohW = 1;
+        public static float Default_CohW = 0;
         public static float Default_AliRad = 1;
         public static float Default_AliW = 0;
         public static float Default_SepRad = 1;
-        public static float Default_SepW = 1f;
+        public static float Default_SepW = 0f;
         public static float Default_Sep2Rad = 1;
-        public static float Default_Sep2W = 1f;
+        public static float Default_Sep2W = 0.1f;
         public static float Default_GuiW = 1;
         public static float Default_PFW = 0;
         public static float Default_OAW = 0;
