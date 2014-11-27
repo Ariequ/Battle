@@ -21,6 +21,11 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             selectedTroop = troopAgentUnderScreenPoint(Input.mousePosition, Faction.Self, 3);
+
+            if (selectedTroop != null ) 
+            {
+            Debug.Log("selectedTroop.Name == " + selectedTroop.Name);
+            }
         }
 
         if (Input.GetMouseButton(0))
@@ -28,6 +33,7 @@ public class PlayerControl : MonoBehaviour
             if (selectedTroop != null)
             {
                 targetTroop = troopAgentUnderScreenPoint(Input.mousePosition, Faction.Opponent, 3);
+                selectedTroop.setTroopMoveTarget(ScreenToTerrainPostion(Input.mousePosition));
             }
         }
 
@@ -58,6 +64,19 @@ public class PlayerControl : MonoBehaviour
         }
 
         return null;
+    }
+
+    private Battle.Vector2 ScreenToTerrainPostion(Vector3 screenPoint)
+    {
+        Ray ray = battleCamera.ScreenPointToRay(screenPoint);
+        RaycastHit hit;
+        
+        if (Physics.Raycast(ray, out hit))
+        {
+            return MathUtil.ParseToVector2(hit.point);
+        }
+
+        return Battle.Vector2.zero;
     }
 
     private BattleAgentManager battleAgentManger()

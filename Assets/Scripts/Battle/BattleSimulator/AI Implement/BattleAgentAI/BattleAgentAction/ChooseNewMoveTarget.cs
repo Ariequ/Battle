@@ -15,7 +15,7 @@ namespace Battle
             agent = context.Agent as BattleAgent;
             unitInfo = agent.UnitController;
 
-            SOLDIER_SEARCH_RADIUS = unitInfo.Meta.attackMaxRange * 10;
+            SOLDIER_SEARCH_RADIUS = unitInfo.Meta.attackMaxRange * 2;
 
             if (agent.TracingTarget == null || !agent.TracingTarget.IsAlive)
             {

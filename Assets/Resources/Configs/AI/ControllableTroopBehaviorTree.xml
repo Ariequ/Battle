@@ -1,0 +1,6 @@
+<Selector name="Troop">
+	<Action name="Battle.TroopDieAction">
+		<Condition name="Battle.NoneSoldierCondition" />
+	</Action>
+	<Action name="Battle.TroopMoveAction" in="troopMoveTarget" />
+</Selector>

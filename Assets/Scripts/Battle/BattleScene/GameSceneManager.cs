@@ -52,6 +52,7 @@ namespace Battle
 
         void Update()
         {
+            return;
 
 			messageRoute.Tick(BattleTime.deltaTime);
 

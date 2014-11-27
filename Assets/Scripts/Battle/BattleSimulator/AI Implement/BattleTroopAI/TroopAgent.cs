@@ -135,6 +135,11 @@ namespace Battle
             }
         }
 
+        public void setTroopMoveTarget(Vector2 target)
+        {
+            troopMoveTarget = target;
+        }
+
         #region IAIAgent
         private Behavior m_Behavior;
         

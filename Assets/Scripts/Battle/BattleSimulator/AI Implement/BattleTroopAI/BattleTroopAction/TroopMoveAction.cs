@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Battle
 {
@@ -8,8 +9,16 @@ namespace Battle
 
         override public void onInitialize(IAIContext context)
         {
+//            Debug.Log("=======================" + agent.Faction.ToString());
+
             agent = context.Agent as TroopAgent;
             Vector2 moveTarget = agent.troopMoveTarget;
+
+            if (agent.Faction == Faction.Self)
+            {
+                Debug.Log("troop move target == " + agent.Name +  moveTarget);
+            }
+
 
             if (Vector2.IsZero(moveTarget))
             {

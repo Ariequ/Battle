@@ -7,103 +7,12 @@ using UnityEngine;
 
 namespace Battle
 {
-    public class BattleAgentImage
-    {
-        
-        public BattleAgent agent;
-        public float distance;
-        public List<String> attackers;
-    }
-
-    internal class Tile : LinkedList<BattleAgent>
-    {
-    }
-
-    internal class DistanceSnapshot
-    {
-        
-        public float distance;
-        public float timestamp;
-        
-        public DistanceSnapshot(float distance, float timestamp)
-        {
-            this.distance = distance;
-            this.timestamp = timestamp;
-        }
-    }
-
-    internal class BattleAgentIndex
-    {
-        public BattleAgent agent;
-        public float boundsRadius;
-        public Faction faction;
-        public string troopName;
-        public float movementTimestamp;
-
-        public BattleAgentIndex(BattleAgent agent, string troopName)
-        {
-            this.agent = agent;
-            this.boundsRadius = agent.UnitController.Meta.boundsRadius;
-            this.faction = agent.UnitController.Faction;
-            this.troopName = troopName;
-        }
-    }
-
-    internal class PendingAttackResult
-    {
-        private BattleAgent attacker;
-        private BattleAgent receiver;
-        private Vector2 searchPoint;
-        private float delayTime;
-        
-        public PendingAttackResult(BattleAgent attacker, BattleAgent receiver, float delayTime, Vector2 searchPoint)
-        {
-            this.attacker = attacker;
-            this.receiver = receiver;
-            this.delayTime = delayTime;
-            this.searchPoint = searchPoint;
-        }
-        
-        public bool CheckDueTime(float elapsedTime)
-        {
-            this.delayTime -= elapsedTime;
-            
-            return this.delayTime <= 0;
-        }
-        
-        public void CalculateResult(BattleValueCalculator battleValueCalculator, BattleAgentManager agentManager, GameMessageRoute messageRoute)
-        {
-            Dictionary<String, System.Object> data = new Dictionary<String, System.Object>();
-            data.Add(AttackParamKey.CURRENT_ENEMY, attacker.Name);
-            
-            if (Vector2.IsZero(searchPoint))
-            {
-                data.Add(MessageParamKey.TARGET, this.receiver);
-                messageRoute.SendGameMessage(new MessageContext(Messages.ATTACK_OCCUR, 0, data));
-                
-                battleValueCalculator.Attack(attacker.UnitController.CreateAttackValue(), receiver.UnitController);
-            }
-            else
-            {
-                Faction faction = FactionUtil.Revert(attacker.UnitController.Faction);
-                List<BattleAgent> searchResultList = agentManager.SearchAroundPoint(searchPoint, attacker.UnitController.Meta.bulletMeta.attackRadius, faction); 
-                
-                data.Add(MessageParamKey.TARGETS, searchResultList);
-                messageRoute.SendGameMessage(new MessageContext(Messages.ATTACK_OCCUR, 0, data));
-                
-                foreach (BattleAgent target in searchResultList)
-                {
-                    battleValueCalculator.Attack(attacker.UnitController.CreateAttackValue(), target.UnitController);
-                }
-            }
-        }
-    }
-
     public class BattleAgentManager
     {
 		public const string SoldierBehaviorTreeName = "SoliderBehaviorTree";
         public const string ControllableSoldierBehaviorTreeName = "ControllableSoldierBehaviorTree";
 		public const string TroopBehaviorTreeName = "TroopBehaviorTree";
+        public const string ControllableTroopBehaviorTreeName = "ControllableTroopBehaviorTree";
 
         private static Type[] analyzerDefinitions = new Type[] {
             typeof(AttackLockedSensorAnalyzer),
@@ -715,7 +624,7 @@ namespace Battle
 
         public TroopAgent AddTroop(TroopDefinition troopDefinition)
         {
-			XmlDocument behaviorTree = GetBehaviorTree(TroopBehaviorTreeName);
+            XmlDocument behaviorTree = troopDefinition.faction == Faction.Self ? GetBehaviorTree(ControllableTroopBehaviorTreeName) : GetBehaviorTree(TroopBehaviorTreeName);
 
 			TroopAgent troopAgent = new TroopAgent(troopDefinition, this, behaviorTree);
 
@@ -1023,5 +932,97 @@ namespace Battle
 			data[Faction.Opponent.ToString()] = 1f * opponentHPSum / hpSumDic[Faction.Opponent];
 			outerMessageRoute.SendGameMessage(new MessageContext(Messages.UPDATE_BATTLE_FORCE, 0, data));
 		}
+    }
+
+    public class BattleAgentImage
+    {
+        
+        public BattleAgent agent;
+        public float distance;
+        public List<String> attackers;
+    }
+    
+    internal class Tile : LinkedList<BattleAgent>
+    {
+    }
+    
+    internal class DistanceSnapshot
+    {
+        
+        public float distance;
+        public float timestamp;
+        
+        public DistanceSnapshot(float distance, float timestamp)
+        {
+            this.distance = distance;
+            this.timestamp = timestamp;
+        }
+    }
+    
+    internal class BattleAgentIndex
+    {
+        public BattleAgent agent;
+        public float boundsRadius;
+        public Faction faction;
+        public string troopName;
+        public float movementTimestamp;
+        
+        public BattleAgentIndex(BattleAgent agent, string troopName)
+        {
+            this.agent = agent;
+            this.boundsRadius = agent.UnitController.Meta.boundsRadius;
+            this.faction = agent.UnitController.Faction;
+            this.troopName = troopName;
+        }
+    }
+    
+    internal class PendingAttackResult
+    {
+        private BattleAgent attacker;
+        private BattleAgent receiver;
+        private Vector2 searchPoint;
+        private float delayTime;
+        
+        public PendingAttackResult(BattleAgent attacker, BattleAgent receiver, float delayTime, Vector2 searchPoint)
+        {
+            this.attacker = attacker;
+            this.receiver = receiver;
+            this.delayTime = delayTime;
+            this.searchPoint = searchPoint;
+        }
+        
+        public bool CheckDueTime(float elapsedTime)
+        {
+            this.delayTime -= elapsedTime;
+            
+            return this.delayTime <= 0;
+        }
+        
+        public void CalculateResult(BattleValueCalculator battleValueCalculator, BattleAgentManager agentManager, GameMessageRoute messageRoute)
+        {
+            Dictionary<String, System.Object> data = new Dictionary<String, System.Object>();
+            data.Add(AttackParamKey.CURRENT_ENEMY, attacker.Name);
+            
+            if (Vector2.IsZero(searchPoint))
+            {
+                data.Add(MessageParamKey.TARGET, this.receiver);
+                messageRoute.SendGameMessage(new MessageContext(Messages.ATTACK_OCCUR, 0, data));
+                
+                battleValueCalculator.Attack(attacker.UnitController.CreateAttackValue(), receiver.UnitController);
+            }
+            else
+            {
+                Faction faction = FactionUtil.Revert(attacker.UnitController.Faction);
+                List<BattleAgent> searchResultList = agentManager.SearchAroundPoint(searchPoint, attacker.UnitController.Meta.bulletMeta.attackRadius, faction); 
+                
+                data.Add(MessageParamKey.TARGETS, searchResultList);
+                messageRoute.SendGameMessage(new MessageContext(Messages.ATTACK_OCCUR, 0, data));
+                
+                foreach (BattleAgent target in searchResultList)
+                {
+                    battleValueCalculator.Attack(attacker.UnitController.CreateAttackValue(), target.UnitController);
+                }
+            }
+        }
     }
 }
